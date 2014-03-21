@@ -1,0 +1,294 @@
+body {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+	font-size: 140%;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.vignette {
+	-webkit-box-shadow: inset 0px 0px 100px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0px 0px 100px rgba(0,0,0,0.2);
+	box-shadow: inset 0px 0px 100px rgba(0,0,0,0.2);
+}
+
+.project-spotlight {
+	-webkit-box-shadow: inset 0px 0px 200px rgba(0,0,0,1);
+	-moz-box-shadow: inset 0px 0px 200px rgba(0,0,0,1);
+	box-shadow: inset 0px 0px 200px rgba(0,0,0,1);
+}
+
+/**************Nav Bar***************/
+
+#nav-top {
+	width: 100%;
+	height: 20px;
+	background-image: url('img/texture.png');
+	background-color: white;
+}
+
+#navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+nav {
+	position: fixed;
+	top: 20px;
+	right: 80px;
+	height: 50px;
+	background-image: url('img/texture.png');
+	background-color: white;
+	font-size: 140%;
+	font-weight: bold;
+}
+
+nav ul	{
+	list-style-type: none;
+	padding: 0 20px 0 20px;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 10px;
+	color: black;
+}
+
+nav ul li:hover {
+	color: #333333;
+}
+
+/************** Main ***************/
+
+#main {
+	background-color: #1abc9c;
+	width: 100%;
+	height: 280px;
+	padding: 10px;
+	margin-top: 20px;
+}
+
+#main h2 {
+	text-align: center;
+	padding-top: 50px;
+}
+
+#name {
+	background: black;
+	color: white;
+	margin: 0;
+	width: 100px;
+	height: 100px;
+	margin: 30px 0 0 30px;
+	padding: 20px;
+	font-size: 400%;
+}
+
+/************** Projects ***************/
+
+#content {
+	background: black;
+	width: 100%;
+	min-height: 300px;
+	text-align: center;
+	padding: 50px;
+	color: whitesmoke;
+}
+
+#projects {
+	width: 85%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.project {
+	width: 250px;
+	height: 155px;
+	display: inline-block;
+	margin: 10px;
+
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.overlay {
+	margin-top: 60px;
+	font-size: 200%;
+	color: white;
+}
+
+.description {
+	width: 100%;
+	height: 50px%;
+	margin: 0;
+	padding: 10px;
+	color: gray;
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: top;
+}
+
+.description p {
+	font-size: 90%;
+}
+
+.display {
+	opacity: 0;
+}
+
+#go-figure {
+	background: url('img/go-figure2.png');
+	background-size: 100%;
+}
+
+#d3 {
+	background: url('img/d3.png');
+	background-size: 100%;
+}
+
+#loopd {
+	background-image: url('img/loopd2.png');
+	background-size: 100%;
+}
+
+#lakou {
+	background-image: url('img/lakou2.png');
+}
+
+/************** About ***************/
+
+#about {
+	position: relative;
+	color: #333;
+	padding: 40px 40px 40px 40px;
+	text-align: center;
+}
+
+.swirl {
+	width: 130px;
+}
+
+/************** Skills ***************/
+
+.skills {
+	display: inline-block;
+	border: 1px solid whitesmoke;
+	border-radius: 5px;
+	height: 230px;
+	margin: 20px;
+	text-align: center;
+  vertical-align: top;
+  background: #fafafa;
+}
+
+.skills-section {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.skills li {
+	font-size: 110%;
+	margin-bottom: 5px;
+}
+
+/************** Contact ***************/
+
+#contact {
+	background: #e0e0e0;
+	height: auto;
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+	color: #333;
+}
+
+.social-wrapper {
+	padding-bottom: 20px;
+}
+
+.contact {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #1abc9c;
+	display: inline-block;
+	margin: 20px;
+	padding: 20px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+
+	transition: background-color 0.2s ease;
+}
+
+.contact:hover {
+	background-color: black;
+}
+
+.twitter {
+	background-image: url('img/social_tw.png');
+}
+
+.instagram {
+	background-image: url('img/social_inst.png');
+}
+
+.linked {
+	background-image: url('img/social_in.png');
+}
+
+.git {
+	background-image: url('img/social_git.png');
+}
+
+
+footer {
+	background-image: url('img/texture.png');
+	background-color: white;
+	width: 100%;
+	height: 20px;
+	z-index: 10;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 600px) {
+
+  nav {
+  	width: 100%;
+  	right:0;
+  	margin: 0;
+  	display: block;
+  	text-align: center;
+  }
+
+  #main {
+  	margin-top: 60px;
+  }
+
+  #main h2 {
+  	font-size: 180%;
+  }
+}
