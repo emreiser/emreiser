@@ -167,8 +167,9 @@ nav ul li:hover {
 	background-size: 100%;
 }
 
-#lakou {
-	background-image: url('img/lakou2.png');
+#outflux {
+	background-image: url('img/outflux.png');
+	background-size: 100%;
 }
 
 /************** About ***************/
@@ -224,14 +225,15 @@ nav ul li:hover {
 }
 
 .contact {
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 	border-radius: 50%;
 	background-color: #1abc9c;
 	display: inline-block;
 	margin: 20px;
 	padding: 20px;
 	background-position: 50% 50%;
+	background-size: 50%;
 	background-repeat: no-repeat;
 
 	transition: background-color 0.2s ease;
