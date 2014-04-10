@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test Suite</title>
+		<script type="text/javascript">
+
+			(function() {
+				var results;
+				this.assert = function(value, desc) {
+					var li = document.createElement("li");
+					li.className = value ? "pass" : "fail";
+					li.appendChild(document.createTextNode(desc));
+					results.appendChild(li);
+					if(!value){
+						li.parentNode.parentNode.className = "fail";
+					}
+					return li;
+				};
+
+				this.test = function(name, fn) {
+					results = document.getElementById("results");
+					results = assert(true, name).appendChild(
+						document.createElement("ul")
+					);
+					fn();
+				};
+
+			})();
+
+		window.onload = function(){
+			test("Default", function(){
+				assert(true, "Passing");
+				assert(false, "Failing");
+			});
+		};
+
+		</script>
+
+		<style>
+			body {
+				font-family: sans-serif;
+			}
+
+			ul {
+				margin-bottom: 20px;
+			}
+			.pass {
+				color: green;
+			}
+
+			.fail {
+				color: red;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>Test Suite</h1>
+
+		<ul id="results">
+		</ul>
+
+	</body>
+</html>
