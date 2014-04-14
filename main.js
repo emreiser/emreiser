@@ -1,49 +1,57 @@
 $(document).ready(function(){
-  $(".project").on("mouseenter", ER.hoverProject);
-  $(".project").on("mouseleave", ER.unhoverProject);
+  ER.tagSlide();
+  ER.setCollapse();
 
-  ER.expanded = false;
-  $(window).on("scroll", ER.expandNav);
-  $('#navbar').click(ER.scrollTo);
-
-  $('#projects').click(ER.visitLink);
-
-
+  $(window).on("scroll", ER.hideName);
+  $(window).on("scroll", ER.hideClouds);
+  $("#navbar li, p").click(ER.scrollTo);
 });
 
-ER = {
-  about: 538,
-  projects: 0,
-  contact: 1080
-};
+ER = {};
 
-ER.hoverProject = function(event){
-  $(event.target).addClass("project-spotlight");
-  $(event.target).children(".overlay").animate({opacity: 100}, 200);
-};
-
-ER.unhoverProject = function(event){
-  $(event.target).removeClass("project-spotlight");
-  $(event.target).children(".overlay").animate({opacity: 0}, 200);
-};
-
-ER.expandNav = function(){
-  var offset = $(window).scrollTop();
-  if(offset > 215 && ER.expanded == false){
-    $("#nav-top").animate({height: "70px"});
-    ER.expanded = true;
-  } else if(offset < 215 && ER.expanded == true) {
-    $("#nav-top").animate({height: "20px"});
-    ER.expanded = false;
+ER.hideName = function(event){
+  if($(window).scrollTop() <= 140){
+    $("#initials").css("opacity", (1 - $(window).scrollTop() / 100));
+    $("#tag").css("opacity", (1 - $(window).scrollTop() / 140));
   }
 };
 
-ER.scrollTo = function(event){
-  $('html, body').animate({
-    scrollTop: ER[$(event.target).attr("data-section")]
-  }, 800, 'swing');
+ER.tagSlide = function(event){
+  $("#tag-top").animate({opacity: 1, "padding-top": 0}, 1000);
+  $("#tag-bottom").animate({opacity: 1, "padding-top": 0}, 700);
 };
 
-ER.visitLink = function(){
-  $project.removeClass("project-spotlight");
+ER.scrollTo = function(event){
+  var section = "#" + $(event.target).attr("data-section"), top;
+  top = section == "#top" ? 0 : $(section).position().top - 80;
+  $("html, body").animate({
+    scrollTop: top
+  }, 800, "swing");
+};
+
+ER.setCollapse = function(event){
+  if(window.innerWidth <= 765){
+    $('#navbar li, p').attr("data-toggle", "collapse");
+    $('#navbar li, p').attr("data-target", "#nav-links");
+  }
+};
+
+ER.hideClouds = function(event){
+  var contactTop, yPos, diff;
+  contactTop = $('#contact').position().top;
+  yPos = $(window).scrollTop() + $(window).height() - 175;
+  diff = yPos - contactTop;
+
+  if(yPos > contactTop){
+    if(diff < 0){
+      $('.clouds').css('opacity', 1);
+      $('.social-wrapper').css('opacity', (1 - diff/100));
+    } else {
+      $('.clouds').css('opacity', (1 - diff/100));
+      $('.social-wrapper').css('opacity', diff/100);
+    }
+  } else {
+    $('.clouds').css('opacity', 1);
+    $('.social-wrapper').css('opacity', 0);
+  }
 }
