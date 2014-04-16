@@ -42,16 +42,11 @@ ER.hideClouds = function(event){
   yPos = $(window).scrollTop() + $(window).height() - 175;
   diff = yPos - contactTop;
 
-  if(yPos > contactTop){
-    if(diff < 0){
-      $('.clouds').css('opacity', 1);
-      $('.social-wrapper').css('opacity', (1 - diff/100));
-    } else {
-      $('.clouds').css('opacity', (1 - diff/100));
-      $('.social-wrapper').css('opacity', diff/100);
-    }
-  } else {
+  if(diff < 0){
     $('.clouds').css('opacity', 1);
     $('.social-wrapper').css('opacity', 0);
+  } else {
+    $('.clouds').css('opacity', (1 - diff/100));
+    $('.social-wrapper').css('opacity', diff/100);
   }
-}
+};
