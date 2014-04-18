@@ -5,6 +5,9 @@ $(document).ready(function(){
   $(window).on("scroll", ER.hideName);
   $(window).on("scroll", ER.hideClouds);
   $("#navbar li, p").click(ER.scrollTo);
+  ER.cloudPos = $("#initials").css('background-position-x').split('px')[0];
+
+  $("#initials").on("mousemove", ER.floatClouds);
 });
 
 ER = {};
@@ -49,4 +52,9 @@ ER.hideClouds = function(event){
     $('.clouds').css('opacity', (1 - diff/100));
     $('.social-wrapper').css('opacity', diff/100);
   }
+};
+
+ER.floatClouds = function(event){
+    ER.cloudPos -= 1;
+    $('#initials').css('background-position-x', ER.cloudPos + 'px');
 };

@@ -133,6 +133,9 @@ nav ul li {
 	font-size: 400%;
 	border: 1px solid black;
 	border-radius: 2px;
+	background: url('img/cloud-sm.png') repeat-x;
+	background-size: cover;
+	background-position: -35px 15px;
 }
 
 /************** Projects ***************/
