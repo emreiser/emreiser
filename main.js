@@ -7,7 +7,7 @@ $(document).ready(function(){
   $("#navbar li, p").click(ER.scrollTo);
   ER.cloudPos = $("#initials").css('background-position-x').split('px')[0];
 
-  $("#initials").on("mousemove", ER.floatClouds);
+  $("#initials").on("mouseenter", ER.setOn).on("mouseleave", ER.setOff);
 });
 
 ER = {};
@@ -54,7 +54,18 @@ ER.hideClouds = function(event){
   }
 };
 
+ER.setOn = function(){
+  ER.onBox = true;
+  ER.floatClouds();
+};
+
+ER.setOff = function(){
+  ER.onBox = false;
+};
+
 ER.floatClouds = function(event){
+  if(ER.onBox === true){
     ER.cloudPos -= 1;
-    $('#initials').css('background-position-x', ER.cloudPos + 'px');
+    $('#initials').animate({'background-position-x': ER.cloudPos + 'px'}, {duration: 40, complete: ER.floatClouds});
+  }
 };
