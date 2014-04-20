@@ -1,21 +1,25 @@
 $(document).ready(function(){
   ER.tagSlide();
   ER.setCollapse();
-
-  $(window).on("scroll", ER.hideName);
-  $(window).on("scroll", ER.hideClouds);
-  $("#navbar li, p").click(ER.scrollTo);
   ER.cloudPos = $("#initials").css('background-position-x').split('px')[0];
 
+  $(window).on("scroll", ER.hideName);
+  $(window).on("scroll", ER.toggleClouds);
+  $("#navbar li, p").click(ER.scrollTo);
   $("#initials").on("mouseenter", ER.setOn).on("mouseleave", ER.setOff);
 });
 
-ER = {};
+var ER = {};
+
+ER.getElem = function(id){
+  if (!ER.getElem.cache) { ER.getElem.cache = {}; }
+  return ER.getElem.cache[id] = ER.getElem.cache[id] || document.getElementById(id);
+};
 
 ER.hideName = function(event){
   if($(window).scrollTop() <= 140){
-    $("#initials").css("opacity", (1 - $(window).scrollTop() / 100));
-    $("#tag").css("opacity", (1 - $(window).scrollTop() / 140));
+    ER.getElem('initials').style.opacity = (1 - $(window).scrollTop() / 100);
+    ER.getElem('tag').style.opacity = (1 - ($(window).scrollTop() - 40) / 100);
   }
 };
 
@@ -26,7 +30,7 @@ ER.tagSlide = function(event){
 
 ER.scrollTo = function(event){
   var section = "#" + $(event.target).attr("data-section"), top;
-  top = section == "#top" ? 0 : $(section).position().top - 80;
+  section == "#top" ? top = 0 : top = $(section).position().top - 80;
   $("html, body").animate({
     scrollTop: top
   }, 800, "swing");
@@ -39,18 +43,18 @@ ER.setCollapse = function(event){
   }
 };
 
-ER.hideClouds = function(event){
+ER.toggleClouds = function(event){
   var contactTop, yPos, diff;
   contactTop = $('#contact').position().top;
   yPos = $(window).scrollTop() + $(window).height() - 175;
   diff = yPos - contactTop;
 
   if(diff < 0){
-    $('.clouds').css('opacity', 1);
-    $('.social-wrapper').css('opacity', 0);
+    ER.getElem('clouds').style.opacity = 1;
+    ER.getElem('social-wrapper').style.opacity = 0;
   } else {
-    $('.clouds').css('opacity', (1 - diff/100));
-    $('.social-wrapper').css('opacity', diff/100);
+    ER.getElem('clouds').style.opacity = (1 - diff/100);
+    ER.getElem('social-wrapper').style.opacity = diff/100;
   }
 };
 
@@ -66,6 +70,6 @@ ER.setOff = function(){
 ER.floatClouds = function(event){
   if(ER.onBox === true){
     ER.cloudPos -= 1;
-    $('#initials').animate({'background-position-x': ER.cloudPos + 'px'}, {duration: 40, complete: ER.floatClouds});
+    $(ER.getElem('initials')).animate({'background-position-x': ER.cloudPos + 'px'}, {duration: 40, complete: ER.floatClouds});
   }
 };

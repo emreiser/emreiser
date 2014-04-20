@@ -137,6 +137,7 @@ nav ul li {
 	background: url('//s3.amazonaws.com/emiliereiser.com/cloud-sm.png') repeat-x;
 	background-size: cover;
 	background-position: -35px 15px;
+	cursor: pointer;
 }
 
 /************** Projects ***************/
@@ -253,7 +254,7 @@ nav ul li {
 	position: relative;
 	background: url('//s3.amazonaws.com/emiliereiser.com/jalouzi-footer-trans.png') no-repeat;
 	background-color: #a2caeb;
-	background-size: 30%;
+	background-size: 35%;
 	background-position: bottom center;
 	height: 280px;
 	width: 100%;
@@ -261,7 +262,7 @@ nav ul li {
 	color: #333;
 }
 
-.clouds {
+#clouds {
 	position: absolute;
 	top: 40px;
 	left: 0;
@@ -401,7 +402,7 @@ footer {
   	width: 100%;
   }
 
-  .social-wrapper {
+  #social-wrapper {
   	width: 60%;
   	margin: 0 auto;
   	padding-top: 10px;
@@ -418,7 +419,7 @@ footer {
   	height: 50px;
   }
 
-  .clouds {
+  #clouds {
   	background-size: 100%;
   }
 
