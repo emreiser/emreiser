@@ -1,7 +1,7 @@
 $(document).ready(function(){
   ER.tagSlide();
   ER.setCollapse();
-  ER.cloudPos = $("#initials").css('background-position-x').split('px')[0];
+  ER.cloudPos = -25;
 
   $(window).on("scroll", ER.hideName);
   $(window).on("scroll", ER.toggleClouds);
@@ -70,6 +70,11 @@ ER.setOff = function(){
 ER.floatClouds = function(event){
   if(ER.onBox === true){
     ER.cloudPos -= 1;
-    $(ER.getElem('initials')).animate({'background-position-x': ER.cloudPos + 'px'}, {duration: 40, complete: ER.floatClouds});
+    $(ER.getElem('initials')).animate({'background-position': ER.cloudPos + 'px'}, {duration: 40, complete: ER.floatClouds});
   }
+};
+
+ER.enterNav = function(){
+  $('#navbar').animate({top: 0}, 400);
+
 };

@@ -11,6 +11,7 @@ p {
 a, a:hover {
 	text-decoration: none;
 	outline: none;
+	color: #34b288;
 }
 
 ul {
@@ -135,8 +136,8 @@ nav ul li {
 	border: 1px solid black;
 	border-radius: 2px;
 	background: url('//s3.amazonaws.com/emiliereiser.com/cloud-sm.png') repeat-x;
-	background-size: cover;
-	background-position: -35px 15px;
+	background-size: 220px;
+	background-position: -25px 50%;
 	cursor: pointer;
 }
 
