@@ -67,21 +67,19 @@
 		</div>
 	</div>
 
-	<div id="main" class="vignette">
+	<section id="main" class="vignette">
 		<div id="initials">ER</div>
 		<div id="tag">
 			<h4 id="tag-top">full-stack developer & project manager</h4>
 			<h1 id="tag-bottom">implementing tech for good</h1>
 		</div>
-	</div>
+	</section>
 
 	<div id="projects-wrapper" class="shadow">
-		<div id="projects" class="row">
+		<div id="projects" class="row container">
 
 			<div class="col-md-4">
-				<a href="http://go-figure.herokuapp.com/" target="_blank">
-					<div class="project shadow" id="go-figure">+</div>
-				</a>
+				<div class="project shadow" id="go-figure" data-section="project-description">+</div>
 				<div class="description">
 					<p>A Comparative Look at Countries through Human Development Statistics</p>
 					<p class="caps">Ruby | Rails | Devise | UNDP API</p>
@@ -89,9 +87,7 @@
 			</div>
 
 			<div class="col-md-4">
-				<a href="http://loopdin.herokuapp.com/" target="_blank">
-					<div class="project shadow" id="loopd">+</div>
-				</a>
+				<div class="project shadow" id="loopd" data-section="project-description">+</div>
 				<div class="description">
 					<p>A Simple RSS Feed Aggregator</p>
 					<p class="caps">Ruby | Rails | Javascript | jquery <br>Rspec | Capybara</p>
@@ -100,9 +96,7 @@
 			</div>
 
 			<div class="col-md-4">
-				<a href="http://outflux.herokuapp.com/" target="_blank">
-					<div class="project shadow" id="outflux">+</div>
-				</a>
+				<div class="project shadow" id="outflux" data-section="project-description">+</div>
 				<div class="description">
 					<p>An Interactive Map of International Refugee Flows</p>
 					<p class="caps">Ruby | Rails | CoffeeScript | d3</p>
@@ -111,14 +105,33 @@
 		</div>
 
 	</div>
+	<div id="project-description" class="shadow">
+		<div class="row">
+			<div class="col-md-5 col-sm-5 image">
+				<img class="shadow" src="">
+			</div>
+			<div class="col-md-7 col-sm-7">
+				<div class="next"><span class="glyphicon glyphicon-chevron-right"></span></div>
+				<h2 class="no-pad title"></h2>
+				<h4 class="no-pad tag"></h4>
+				<p class="sans desc"></p>
+				<hr>
+				<p class="tech caps"></span></p>
+				<div class="buttons right">
+					<div class="close-project btn btn-default">Close</div>
+					<a href="" target="blank"><div class="launch btn">Launch site</div></a>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="about" class="container">
 		<h2 id="about-header">I'm a developer, designer &amp doer<br> with a passion for aesthetics and problem-solving.</h2>
 		<img class="swirl" src="//s3.amazonaws.com/emiliereiser.com/swirl.png" alt="swirl"></img>
-		<p>My work to date has been inspired by a desire to use technology to drive positive social change.</p>
-		<p>I've collaborated on tech &amp media programs with communities in Haiti, Brazil, Sierra Leone and New York and I welcome the opportunity to tackle new creative and technical challenges.</p> 
-		<p>For more information on my previous work, <a href="https://www.linkedin.com/in/emiliereiser" target="blank">see here</a>.</p>
-		<p class="pad-top">My current skills include:</p>
+		<p class="sans">My work to date has been inspired by a desire to use technology to drive positive social change.</p>
+		<p class="sans">I've collaborated on tech &amp media programs with communities in Haiti, Brazil, Sierra Leone and New York and I welcome the opportunity to tackle new creative and technical challenges.</p> 
+		<p class="sans">For more information on my previous work, <a href="https://www.linkedin.com/in/emiliereiser" target="blank">see here</a>.</p>
+		<p class="pad-top big">My current skills include:</p>
 
 		<div class="row skills-section">
 
